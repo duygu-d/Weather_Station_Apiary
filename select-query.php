@@ -2,7 +2,7 @@
 
 include "db.php";
 
-$sql = "SELECT id, apiary_id, current_date_and_time, temperature FROM apiary_weather_station";
+$sql = "SELECT id, apiary_id, current_date_and_time, temperature, humidity FROM apiary_weather_station";
 $result = $db->query($sql);
 
 $result_array = array();
@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
             "apiary_id" => $row["apiary_id"],
             "current_date_and_time" => $row["current_date_and_time"],
             "temperature" => $row["temperature"],
-           // "humidity" => $row["humidity"]
+            "humidity" => $row["humidity"]
         );
     }
 
